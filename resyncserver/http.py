@@ -230,7 +230,8 @@ class DynamicChangeListHandler(tornado.web.RequestHandler):
         # change_list = ChangeList(resources=changes)
         change_list.describedby = self.source.describedby_uri
         change_list.up = self.source.capability_list_uri
-        change_list.md_from = change_list.resources[0].timestamp
+        if len(change_list.resources) > 0:
+            change_list.md_from = change_list.resources[0].timestamp
         change_list.md_until = 'now'
         return change_list.as_xml()
 
