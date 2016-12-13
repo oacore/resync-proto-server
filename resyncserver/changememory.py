@@ -7,6 +7,7 @@ Created by Bernhard Haslhofer on 2012-04-27.
 
 """
 import logging
+import urlparse
 
 from resync.change_list import ChangeList
 
@@ -59,7 +60,7 @@ class DynamicChangeList(ChangeMemory):
     @property
     def base_uri(self):
         """Return the changememory's URI."""
-        return self.source.base_uri + "/" + self.uri_path
+        return urlparse.urljoin(self.source.base_uri, self.uri_path)
 
     def generate(self):
         """Generate a list of changes."""

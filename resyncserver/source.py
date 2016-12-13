@@ -19,7 +19,6 @@ import urllib
 import urlparse
 from os.path import basename
 
-
 from resync.utils import compute_md5_for_file
 from resync.resource_list import ResourceList
 
@@ -56,7 +55,7 @@ class DynamicResourceListBuilder(object):
 
         e.g., http://localhost:8080/resourcelist.xml
         """
-        return self.source.base_uri + "/" + self.path
+        return urlparse.urljoin(self.source.base_uri, self.path)
 
     def generate(self):
         """Generate a resource_list (snapshot from the source)."""
@@ -122,17 +121,6 @@ class Source(Observable, FileSystemEventHandler):
             self.resource_list_builder.bootstrap()
         self._log_stats()
 
-    def bootstrap_simulator(self):
-        """Bootstrap the source with a set of resources."""
-        self.logger.info("Bootstrapping source...")
-        for i in range(self.config['number_of_resources']):
-            self._create_resource(notify_observers=False)
-        if self.has_changememory:
-            self.changememory.bootstrap()
-        if self.has_resource_list_builder:
-            self.resource_list_builder.bootstrap()
-        self._log_stats()
-
     def _folder_boot(self, cur_folder):
         files_names = os.listdir(cur_folder)
         for f in files_names:
@@ -143,6 +131,10 @@ class Source(Observable, FileSystemEventHandler):
                 if not basename(f_path).startswith('.'):
                     resource_subpath = os.path.relpath(f_path, self.folder)
                     self._create_resource(resource_subpath, f_path, notify_observers=False)
+        '''mapper = Mapper(mappings=[urlparse.urljoin(self.base_uri, Source.RESOURCE_PATH, basename), cur_folder])
+        rlb = ResourceListBuilder(mapper=mapper)
+        m = rlb.from_disk().as_xml()
+        print m'''
 
     # Source data accessors
 
