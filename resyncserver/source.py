@@ -229,10 +229,9 @@ class Source(Observable, FileSystemEventHandler):
 
     def _create_resource(self, basename=None, file_path=None, notify_observers=True):
         """Create a new resource, add it to the source, notify observers."""
-        timestamp = time.time()
         payload = open(file_path).read()
         md5 = compute_md5_for_file(file_path)
-        self._repository[basename] = {'timestamp': timestamp, 'length': len(payload), 'md5': md5}
+        self._repository[basename] = {'timestamp': os.path.getmtime(file_path), 'length': len(payload), 'md5': md5}
         if notify_observers:
             change = Resource(
                 resource=self.resource(basename), change="created")
@@ -313,7 +312,7 @@ class Source(Observable, FileSystemEventHandler):
                 elif event.event_type == 'moved':
                     self._create_resource(os.path.relpath(event.dest_path, self.folder), event.dest_path)
                     self._delete_resource(os.path.relpath(event.src_path, self.folder))
-                    print basename(event.src_path) + " renamed to " + basename(event.dest_path)
+                    print event.src_path + " moved to " + event.dest_path
 
 
     def on_modified(self, event):
