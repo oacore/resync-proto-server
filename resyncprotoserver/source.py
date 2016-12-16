@@ -22,8 +22,8 @@ from os.path import basename
 from resync.utils import compute_md5_for_file
 from resync.resource_list import ResourceList
 
-from resyncserver.observer import Observable
-from resyncserver.resource import Resource
+from resyncprotoserver.observer import Observable
+from resyncprotoserver.resource import Resource
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler

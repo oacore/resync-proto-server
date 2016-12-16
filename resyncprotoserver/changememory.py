@@ -11,7 +11,7 @@ import urlparse
 
 from resync.change_list import ChangeList
 
-from resyncserver.observer import Observer
+from resyncprotoserver.observer import Observer
 
 
 class ChangeMemory(Observer):

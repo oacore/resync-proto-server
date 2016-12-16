@@ -7,7 +7,7 @@ from setuptools import setup
 # as an extra sanity check. (Thanks for comments in
 # http://stackoverflow.com/questions/458550/standard-way-to-embed-version-into-python-package )
 import re
-VERSIONFILE="resyncserver/_version.py"
+VERSIONFILE="resyncprotoserver/_version.py"
 verfilestr = open(VERSIONFILE, "rt").read()
 match = re.search(r"^__version__ = '(\d\.\d.\d+(\.\d+)?)'", verfilestr, re.MULTILINE)
 if match:
@@ -18,8 +18,8 @@ else:
 setup(
     name='resync-server',
     version=version,
-    packages=['resyncserver'],
-    package_data={'resyncserver': ['static/*','templates/*']},
+    packages=['resyncprotoserver'],
+    package_data={'resyncprotoserver': ['static/*','templates/*']},
     scripts=['resync-server'],
     classifiers=["Development Status :: 4 - Beta",
                  "Intended Audience :: Developers",
@@ -44,5 +44,5 @@ setup(
         "pyyaml",
         "watchdog>=0.8.3"
     ],
-    test_suite="resyncserver.test",
+    test_suite="resyncprotoserver.test",
 )

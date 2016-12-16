@@ -20,7 +20,7 @@ import tornado.web
 from resync.source_description import SourceDescription
 from resync.capability_list import CapabilityList
 
-from resyncserver.source import Source
+from resyncprotoserver.source import Source
 
 
 class HTTPInterface(threading.Thread):

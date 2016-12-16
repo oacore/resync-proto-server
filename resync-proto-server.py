@@ -16,11 +16,11 @@ import logging.config
 
 import logutils.dictconfig
 
-from resyncserver._version import __version__
-from resyncserver.changememory import DynamicChangeList
-from resyncserver.http import HTTPInterface
-from resyncserver.source import Source
-from resyncserver.source import DynamicResourceListBuilder
+from resyncprotoserver._version import __version__
+from resyncprotoserver.changememory import DynamicChangeList
+from resyncprotoserver.http import HTTPInterface
+from resyncprotoserver.source import Source
+from resyncprotoserver.source import DynamicResourceListBuilder
 
 DEFAULT_CONFIG_FILE = 'config/default.yaml'
 DEFAULT_LOG_FILE = 'config/logging.yaml'
