@@ -1,6 +1,6 @@
-======================
-ResourceSync Toy Server
-======================
+=============================
+ResourceSync Prototype Server
+=============================
 
 The ResourceSync Server expose a `ResourceSync
 <http://www.openarchives.org/rs>`_ Source, which is a server that hosts resources subject to synchronization.
@@ -20,13 +20,6 @@ This server is designed to run under Python 2.6, 2.7, 3.3, 3.4 and 3.5. Check wi
 
     python --version
 
-**Automatic installation**::
-
-    easy_install resync-server
-
-``rsync-server`` is listed in `PyPI
-<http://pypi.python.org/pypi/resync-server>`_ and can be installed with ``pip`` or ``easy_install``. Doing an ``easy_install`` should also install the dependencies ``resync`` and ``tornado`` if they are not already on your system.
-
 **Manual installation from github**:
 
 Install the `resync
@@ -35,17 +28,17 @@ Install the `resync
 
     pip install resync tornado
     
-Get the ResourceSync Server from `Github
-<http://www.github.com/oacore/resync-server>`_::
+Get the ResourceSync Prototype Server from `Github
+<http://www.github.com/openminted/omtd-resync/resync-proto-server>`_::
 
-    git clone git://github.com/oacore/resync-server.git
+    git clone git://github.com/openminted/omtd-resync/resync-proto-server.git
 
 Quick Start
 -----------
 
 Run the source server (with the default configuration in ``./config/default.yaml``)::
 
-    ./resync-server
+    ./resync-proto-server
 
 Access from a web browser as http://localhost:8888/
 

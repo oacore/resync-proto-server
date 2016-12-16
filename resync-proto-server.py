@@ -2,7 +2,7 @@
 # encoding: utf-8
 """
 
-resync-server: ResourceSync tool for exposing a changing Web data source.
+resync-proto-server: ResourceSync tool for exposing a changing Web data source.
 
 Created by Giorgio Basile on 2016-12-12
 Based on the resync-simulator project: https://github.com/resync/resync-simulator
