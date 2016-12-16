@@ -1,12 +1,13 @@
 ======================
-ResourceSync Server
+ResourceSync Toy Server
 ======================
 
 The ResourceSync Server expose a `ResourceSync
 <http://www.openarchives.org/rs>`_ Source, which is a server that hosts resources subject to synchronization.
 
-This project is inspired to the [ResourceSync simulator](https://github.com/resync/resync-simulator) reference implementation
-developed by [Bernhard Haslhofer](https://github.com/behas) and [Simeon Warner](https://github.com/zimeon)
+This project is based on the [ResourceSync simulator](https://github.com/resync/resync-simulator) reference implementation
+developed by [Bernhard Haslhofer](https://github.com/behas) and [Simeon Warner](https://github.com/zimeon). We left their
+comments and authorship in all the source files to acknowledge their work.
 
 Any ResourceSync-compliant client can be used to synchronize a Destination with the Source. This version of the server is written against v1.0 of the `ResourceSync specification
 <http://www.openarchives.org/rs/1.0>`_ and has been tested with v1.0.2 of the `ResourceSync client and library reference implementation

@@ -291,7 +291,7 @@ class Source(Observable, FileSystemEventHandler):
             elif event.event_type == 'deleted':
                 print "Detected deletion of directory " + basename(event.src_path)
         elif not event.is_directory:
-            if basename(event.src_path) != '.DS_Store':
+            if not basename(event.src_path).startswith('.'):
                 if event.event_type == 'created':
                     self._create_resource(os.path.relpath(event.src_path, self.folder), event.src_path)
                     print basename(event.src_path) + " created"

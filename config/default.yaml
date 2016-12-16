@@ -4,20 +4,17 @@
 
 source:
     name: Data Interoperability Toolkit
-    event_types: [create, update, delete]
     folder: /path/to/source
 
 ##### Resource List Builder Implementations #####
 
 # A dynamic builder that creates inventories at request time
 resource_list_builder:
-    class: DynamicResourceListBuilder
     uri_path: resourcelist.xml
 
 ##### ChangeMemory Implementations #####
 
 # A dynamic memory-based change memory
 changememory:
-    class: DynamicChangeList
     uri_path: changelist.xml
     max_changes: 1000
