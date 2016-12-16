@@ -56,7 +56,7 @@ Parameterized Use Cases can be defined by creating a `YAML
 
     source:
         name: Data Interoperability Toolkit
-        folder: /Users/giorgio/Desktop/source_folder
+        folder: /path/to/folder
         
         
 See the examples in the **./config** directory for further details.
