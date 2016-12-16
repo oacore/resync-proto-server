@@ -31,7 +31,7 @@ Install the `resync
     pip install resync tornado
     
 Get the ResourceSync Prototype Server from `Github
-<http://www.github.com/oacore/resync-proto-server>`_::
+<https://github.com/oacore/resync-proto-server>`_::
 
     git clone git://github.com/oacore/resync-proto-server.git
 
@@ -66,6 +66,7 @@ See also
 
 `ResourceSync library
 <http://github.com/resync/resync>`_
+
 `ResourceSync Simulator
 <http://github.com/resync/resync-simulator>`_
 
